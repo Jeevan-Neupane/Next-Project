@@ -2,6 +2,8 @@ import connectDB from "@/db/db";
 import { Post } from "@/model/post.model"
 import { User } from "@/model/user.model";
 
+//*We will use the routes rather than these things
+
 export const getPosts = async () => {
     try {
         connectDB();
