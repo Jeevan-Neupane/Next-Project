@@ -1,7 +1,23 @@
 import Image from "next/image";
 import styles from "./singlePost.module.css";
 
-function SingleBlogPage() {
+const getData = async (slug) => {
+  const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+    next: { revalidate: 3600 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Something went wrong");
+  }
+
+  return res.json();
+};
+
+async function SingleBlogPage({ params }) {
+  const { slug } = params;
+  console.log(slug);
+  const post = await getData(slug);
+  console.log(post);
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
