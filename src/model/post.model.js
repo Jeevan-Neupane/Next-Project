@@ -31,4 +31,4 @@ const postSchema = new Schema({
 
 
 
-export const Post = models.Post || model("Post", postSchema);
+export const Post = models?.Post || model("Post", postSchema);

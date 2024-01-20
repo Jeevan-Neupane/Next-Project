@@ -3,7 +3,8 @@ import { useState } from "react";
 import styles from "./links.module.css";
 import NavLink from "./navLink/NavLink";
 import Image from "next/image";
-function Links() {
+import { handleGithubLogout } from "@/utils/acttions";
+function Links({ session }) {
   const [open, setOpen] = useState(false);
   const links = [
     {
@@ -23,8 +24,6 @@ function Links() {
       path: "/blog",
     },
   ];
-
-  const session = true;
   const isAdmin = false;
 
   return (
@@ -38,10 +37,14 @@ function Links() {
             />
           );
         })}
-        {session ? (
+        {session?.user ? (
           <>
-            {isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
-            <button className={styles.logout}>Logout</button>
+            {session.user?.isAdmin && (
+              <NavLink item={{ title: "Admin", path: "/admin" }} />
+            )}
+            <form action={handleGithubLogout}>
+              <button className={styles.logout}>Logout</button>
+            </form>
           </>
         ) : (
           <NavLink item={{ title: "Login", path: "/login" }} />
