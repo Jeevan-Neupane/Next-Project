@@ -15,7 +15,7 @@ async function Navbar() {
         Logo
       </Link>
       <div>
-        <Links session={session} />
+        <Links  session={session} />
       </div>
     </div>
   );

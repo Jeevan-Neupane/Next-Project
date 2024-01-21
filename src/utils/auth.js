@@ -2,7 +2,9 @@ import connectDB from "@/db/db";
 import { User } from "@/model/user.model";
 import NextAuth from "next-auth"
 import GitHub from "next-auth/providers/github"
+import { authConfig } from "./auth.config";
 export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
+    ...authConfig,
     providers: [GitHub({ clientId: process.env.GIT_CLIENT_ID, clientSecret: process.env.GIT_CLIENT_SECRET })],
     callbacks: {
         async signIn({ user, account, profile }) {
@@ -28,7 +30,8 @@ export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
 
             }
             return true;
-        }
+        },
+        ...authConfig.callbacks
 
     }
 })
