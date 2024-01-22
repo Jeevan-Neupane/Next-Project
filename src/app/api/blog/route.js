@@ -6,6 +6,7 @@ export const GET = async (request) => {
     try {
         connectDB();
         const posts = await Post.find();
+        console.log(posts);
 
         return NextResponse.json(posts);
 

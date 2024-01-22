@@ -1,6 +1,6 @@
 "use client"
 
-import { addPost } from "@/lib/action";
+import { addPost } from "@/utils/actions";
 import styles from "./adminPostForm.module.css";
 import { useFormState } from "react-dom";
 

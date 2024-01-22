@@ -3,7 +3,7 @@
 import styles from "./loginForm.module.css";
 import { useFormState } from "react-dom";
 import Link from "next/link";
-import { Login } from "@/utils/acttions";
+import { Login } from "@/utils/actions";
 
 const LoginForm = () => {
   const [state, formAction] = useFormState(Login, undefined);

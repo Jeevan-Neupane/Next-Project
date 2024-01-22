@@ -3,9 +3,7 @@ import styles from "./blog.module.css";
 import PostCard from "@/components/postCard/PostCard";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/blog", {
-    next: { revalidate: 3600 },
-  });
+  const res = await fetch("http://localhost:3000/api/blog");
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -16,7 +14,6 @@ const getData = async () => {
 
 async function BlogPage() {
   const posts = await getData();
-  console.log(posts);
   return (
     <div className={styles.container}>
       {posts.map((post) => {

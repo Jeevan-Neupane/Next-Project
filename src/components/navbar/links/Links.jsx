@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./links.module.css";
 import NavLink from "./navLink/NavLink";
 import Image from "next/image";
-import { handleGithubLogout } from "@/utils/acttions";
+import { handleGithubLogout } from "@/utils/actions";
 function Links({ session }) {
   const [open, setOpen] = useState(false);
   const links = [

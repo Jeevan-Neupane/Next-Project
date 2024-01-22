@@ -6,6 +6,7 @@ export const GET = async (request, { params }) => {
     try {
         connectDB();
         const post = await Post.findOne({ slug });
+        console.log(post);
 
         return NextResponse.json(post);
 
