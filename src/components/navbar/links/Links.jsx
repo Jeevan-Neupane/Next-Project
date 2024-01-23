@@ -55,6 +55,7 @@ function Links({ session }) {
         src='/menu.png'
         width={30}
         height={30}
+        alt="menu"
         onClick={() => setOpen((prev) => !prev)}
         className={styles.menuButton}
       />

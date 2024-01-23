@@ -53,21 +53,7 @@ const register = async (previousState, formData) => {
     }
 };
 
-const Login = async (prevState, formData) => {
-    const { username, password } = Object.fromEntries(formData);
 
-    try {
-        connectDB();
-        await signIn("credentials", { username, password });
-    } catch (err) {
-        console.log(err);
-
-        if (err.message.includes("CredentialsSignin")) {
-            return { error: "Invalid username or password" };
-        }
-        throw err;
-    }
-};
 export const deleteUser = async (formData) => {
     const { id } = Object.fromEntries(formData);
 
@@ -178,4 +164,31 @@ export const getUser = async (userId) => {
     }
 }
 
-export { handleGithubLogin, handleGithubLogout, register, Login }
+export const findUser=async (email)=>{
+    try {
+        connectDB();
+        const user = await User.find({ email });
+
+        return user;
+    } catch (error) {
+        console.log(error);
+        return { error: "Error while getting user" }
+    }
+}
+export const login = async (prevState, formData) => {
+    const { username, password } = Object.fromEntries(formData);
+  
+    try {
+      await signIn("credentials", { username, password });
+    } catch (err) {
+      console.log(err);
+  
+      if (err.message.includes("CredentialsSignin")) {
+        return { error: "Invalid username or password" };
+      }
+      throw err;
+    }
+  };
+  
+
+export { handleGithubLogin, handleGithubLogout, register }

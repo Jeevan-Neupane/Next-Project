@@ -1,9 +1,15 @@
-import React from 'react'
+// LoadingPage.js
 
-function Loading() {
+import React from 'react';
+import { FaSpinner } from 'react-icons/fa';
+
+const LoadingPage = () => {
   return (
-    <div>Loading.....</div>
-  )
-}
+    <div className="loadingContainer">
+      <FaSpinner className="spinner" />
+      <p className="Loadingtext">Loading...</p>
+    </div>
+  );
+};
 
-export default Loading
+export default LoadingPage;
