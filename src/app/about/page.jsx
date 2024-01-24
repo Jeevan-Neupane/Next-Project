@@ -7,14 +7,13 @@ export const metadata = {
 };
 
 const AboutPage = () => {
-  // console.log("lets check where it works")
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
         <h2 className={styles.subtitle}>About Us</h2>
         <h1 className={styles.title}>Where creativity meets technology</h1>
         <p className={styles.desc}>
-          Welcome to WonderWords, where creativity meets technology. We're
+          Welcome to WonderWords, where creativity meets technology. We are
           passionate about empowering individuals to share their stories
           effortlessly. Discover a seamless blogging experience that transforms
           your thoughts into captivating narratives. Join us on this journey of
