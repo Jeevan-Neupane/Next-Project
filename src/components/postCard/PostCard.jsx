@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import { getUser } from "@/utils/actions";
 
 const PostCard = async ({ post }) => {
-  let id=post.userId.toString();
+  let id = post.userId.toString();
   const user = await getUser(post.userId);
 
   return (
@@ -18,7 +18,6 @@ const PostCard = async ({ post }) => {
             fill
             className={styles.img}
           />
-
         </div>
 
         <span className={styles.date}>

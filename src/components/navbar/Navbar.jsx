@@ -12,7 +12,7 @@ async function Navbar() {
         href='/'
         className={style.logo}
       >
-        Logo
+        Blogs
       </Link>
       <div>
         <Links  session={session} />

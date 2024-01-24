@@ -30,7 +30,8 @@
     border-radius: 5px;
     border: none;
     outline: none;
-    background-color: var(--bgSoft);
+    background-color: var(--bg);
+    border: 1px solid white;
     color: var(--text);
   }
   
@@ -47,6 +48,10 @@
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
+    
+    }
+    .formContainer{
+      width: 80%;
     }
   }
   

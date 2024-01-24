@@ -14,13 +14,12 @@ const AdminPage = async () => {
   let admin;
   if (session?.user?.email) {
     admin = await findUser(session?.user?.email);
-  }
-  if (session?.user?.id) {
+  } else {
     admin = await getUser(session.user.id);
   }
 
-  const id = admin[0]._id.toString();
-  console.log(id);
+  const id = admin[0]?._id.toString();
+  console.log(admin);
   if (!admin[0]?.isAdmin) {
     redirect("/");
   }

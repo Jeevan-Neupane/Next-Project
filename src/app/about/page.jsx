@@ -6,42 +6,39 @@ export const metadata = {
   description: "About description",
 };
 
-
 const AboutPage = () => {
-
   // console.log("lets check where it works")
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
-        <h2 className={styles.subtitle}>About Agency</h2>
-        <h1 className={styles.title}>
-          We create digital ideas that are bigger, bolder, braver and better.
-        </h1>
+        <h2 className={styles.subtitle}>About Us</h2>
+        <h1 className={styles.title}>Where creativity meets technology</h1>
         <p className={styles.desc}>
-          We create digital ideas that are bigger, bolder, braver and better. We
-          believe in good ideas flexibility and precission We’re world’s Our
-          Special Team best consulting & finance solution provider. Wide range
-          of web and software development services.
+          Welcome to WonderWords, where creativity meets technology. We're
+          passionate about empowering individuals to share their stories
+          effortlessly. Discover a seamless blogging experience that transforms
+          your thoughts into captivating narratives. Join us on this journey of
+          expression and connection
         </p>
         <div className={styles.boxes}>
           <div className={styles.box}>
-            <h1>10 K+</h1>
-            <p>Year of experience</p>
+            <h1>1 K+</h1>
+            <p>Followers</p>
           </div>
           <div className={styles.box}>
-            <h1>10 K+</h1>
-            <p>Year of experience</p>
+            <h1>100+</h1>
+            <p>Blogs</p>
           </div>
           <div className={styles.box}>
-            <h1>10 K+</h1>
-            <p>Year of experience</p>
+            <h1>100+</h1>
+            <p>Daily Users</p>
           </div>
         </div>
       </div>
       <div className={styles.imgContainer}>
         <Image
-          src="/about.png"
-          alt="About Image"
+          src='/about.svg'
+          alt='About Image'
           fill
           className={styles.img}
         />
